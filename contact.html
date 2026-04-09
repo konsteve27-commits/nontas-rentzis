@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΕΠΙΚΟΙΝΩΝΙΑ - Nontas Rentzis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/webp" href="icon.webp">
+    <style>
+        /* Ειδικά styles για τη μίνιμαλ σελίδα επικοινωνίας */
+        .minimal-contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .minimal-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 350px;
+            padding: 16px 24px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 50px; /* Μίνιμαλ στρογγυλεμένο σχήμα */
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Reset για το button του email */
+        button.minimal-item {
+            font-family: inherit;
+            outline: none;
+        }
+
+        .minimal-item:hover {
+            border-color: #bf9000;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .minimal-item svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            fill: none;
+            stroke: #bf9000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .minimal-item .text {
+            flex-grow: 1;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-feedback {
+            font-size: 1.2rem; /* Ελαφρώς μεγαλύτερο τικ */
+            color: #28a745; /* Πράσινο για επιτυχία */
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            right: 24px;
+        }
+
+        .copy-feedback.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header id="main-header">
+    <div class="header-logo">
+        <a href="index.html" class="header-link">
+            <div class="site-title">Nontas Rentzis</div>
+        </a>
+    </div>
+    
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html">ΑΡΧΙΚΗ</a>
+        <a href="bio.html">ΒΙΟΓΡΑΦΙΚΟ</a>
+        <a href="naive-art.html">ΛΑΪΚΗ ΖΩΓΡΑΦΙΚΗ</a>
+        <a href="contact.html" class="active">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</header>
+
+<main class="container">
+    <h1 style="margin-bottom: 10px;">ΕΠΙΚΟΙΝΩΝΙΑ</h1>
+    <p style="text-align: center; color: #777; font-size: 0.95rem; margin-bottom: 30px;">
+        Επιλέξτε έναν από τους παρακάτω τρόπους για να επικοινωνήσετε ή να περιηγηθείτε στο έργο του καλλιτέχνη.
+    </p>
+    
+    <div class="minimal-contact-wrapper">
+        <a href="tel:+302109917046" class="minimal-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span class="text">210 9917046</span>
+        </a>
+
+        <a href="tel:+306973622081" class="minimal-item">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <span class="text">697 3622081</span>
+        </a>
+
+        <button onclick="copyEmail(event)" class="minimal-item" title="Πατήστε για αντιγραφή">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="text" id="email-text">ep.rentzis@gmail.com</span>
+            <span class="copy-feedback" id="copy-feedback">✓</span> </button>
+
+        <a href="https://www.youtube.com/@%CE%9D%CF%8E%CE%BD%CF%84%CE%B1%CF%82%CE%A1%CE%B5%CE%BD%CF%84%CE%B6%CE%AE%CF%82" class="minimal-item" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.17 1 12 1 12s0 3.83.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.83 23 12 23 12s0-3.83-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            <span class="text">YouTube</span>
+        </a>
+
+        <a href="https://gr.pinterest.com/eprentzis/" class="minimal-item" target="_blank">
+            <svg viewBox="0 0 24 24" style="fill: #bf9000; stroke: none;">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/>
+            </svg>
+            <span class="text">Pinterest</span>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Νώντας Ρεντζής. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function copyEmail(event) {
+        event.preventDefault();
+        const emailText = "ep.rentzis@gmail.com";
+        const feedback = document.getElementById('copy-feedback');
+        
+        navigator.clipboard.writeText(emailText).then(() => {
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000); // Το τικ παραμένει για 2 δευτερόλεπτα
+        }).catch(err => {
+            console.error('Αποτυχία αντιγραφής: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
