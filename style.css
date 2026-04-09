@@ -383,14 +383,25 @@ footer {
     .grid-container {
         gap: 15px; 
     }
-}
 
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: 1fr;
+    /* Αναγκαστική διάταξη σε 1 στήλη (αγνοώντας τα inline styles) */
+    .grid-container,
+    .media-grid, 
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
     }
-    
-    .media-grid, .gallery-grid {
-        grid-template-columns: 1fr;
+
+    /* Μετατροπή παλιών πινάκων (tables) σε block στοιχεία για να μπαίνουν το ένα κάτω από το άλλο */
+    .exhibition-table, 
+    .exhibition-table tbody, 
+    .exhibition-table tr, 
+    .exhibition-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .exhibition-table td {
+        padding: 0;
+        margin-bottom: 15px;
     }
 }
